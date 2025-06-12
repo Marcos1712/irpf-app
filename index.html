@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon-192.png" type="image/png">
@@ -16,30 +17,36 @@
       padding: 40px;
       margin: 0;
     }
+
     .container {
       background: white;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       padding: 30px;
       max-width: 500px;
       width: 100%;
     }
+
     h2 {
       text-align: center;
       color: #2c3e50;
     }
+
     label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
     }
-    input, select {
+
+    input,
+    select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
+
     button {
       margin-top: 20px;
       width: 100%;
@@ -51,9 +58,11 @@
       font-size: 16px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #2471a3;
     }
+
     .resultado {
       margin-top: 25px;
       font-weight: bold;
@@ -62,6 +71,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h2>Calculadora IRPF Mensal (Maio de 2025) Cafeara</h2>
@@ -113,10 +123,10 @@
       const deducaoDependentes = dependentes * 189.59;
       const isencao65 = maior65 ? 1903.98 : 0;
 
-      const outrasDeducoesCorrigidas = outrasDeducoes > 607.20 ? 607.20 : outrasDeducoes;
+      const outrasDeducoesCorrigidas = outrasDeducoes - deducaoDependentes < 607.20 ? 607.20 : outrasDeducoes;
 
       const totalDeducoes = deducaoDependentes + outrasDeducoes + isencao65;
-            
+
       const baseCalculo = salario - vale - totalDeducoes;
 
       let imposto = 0;
@@ -161,4 +171,5 @@
 
   </script>
 </body>
+
 </html>
