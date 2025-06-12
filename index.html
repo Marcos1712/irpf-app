@@ -123,14 +123,20 @@
       const deducaoDependentes = dependentes * 189.59;
       const isencao65 = maior65 ? 1903.98 : 0;
 
-      const outrasDeducoesCorrigidas = outrasDeducoes > 607.20 ? 607.20 : outrasDeducoes;
+      // const outrasDeducoesCorrigidas = outrasDeducoes > 607.20 ? 607.20 : outrasDeducoes;
 
-      const totalDeducoes2 = deducaoDependentes + outrasDeducoes;
-      
-      
-      const totalDeducoes = deducaoDependentes + outrasDeducoes + isencao65;
+      let outrasDeducoesCorrigidas = outrasDeducoes;
+      if (deducaoDependentes + outrasDeducoes < 607.20) {
+        outrasDeducoesCorrigidas = 607.20 - deducaoDependentes;
+      }
 
-      
+      const totalDeducoes = deducaoDependentes + outrasDeducoesCorrigidas + isencao65;
+
+
+
+     // const totalDeducoes = deducaoDependentes + outrasDeducoes + isencao65;
+
+
       const baseCalculo = salario - vale - totalDeducoes;
 
       let imposto = 0;
