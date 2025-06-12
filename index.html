@@ -123,8 +123,9 @@
       const deducaoDependentes = dependentes * 189.59;
       const isencao65 = maior65 ? 1903.98 : 0;
 
-      const outrasDeducoesCorrigidas = outrasDeducoes < 607.20 ? 607.20 : outrasDeducoes;
+      const outrasDeducoesCorrigidas = outrasDeducoes > 607.20 ? 607.20 : outrasDeducoes;
 
+      
       const totalDeducoes = deducaoDependentes + outrasDeducoes + isencao65;
 
       const baseCalculo = salario - vale - totalDeducoes;
